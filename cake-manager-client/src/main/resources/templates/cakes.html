@@ -11,10 +11,31 @@
     <div th:insert="fragments/nav :: nav"></div>
     <div class="container" style="padding-top: 10vh; display: flex; flex-direction: column; align-items: center;">
         <h1 th:text="#{cakes.headline}" class="mb-4"/>
+        <br>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cake : ${cakes}">
+                <td th:text="${cake.getTitle()}"></td>
+                <td th:text="${cake.getDescription()}"></td>
+                <td th:utext="${cake.getImage()}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <button th:text="#{btn.create.cake}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#createCakeModal" />
+        <div th:insert="fragments/modal :: modal" th:with="cake=${cake}"></div>
 
     </div>
 </div>
 
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
 <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
 
 </body>

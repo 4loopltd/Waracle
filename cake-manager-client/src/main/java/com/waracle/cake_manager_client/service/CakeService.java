@@ -8,9 +8,14 @@ import java.util.List;
 @Service
 public class CakeService {
 
+
     public List<CakeDTO> findAll() {
-        // stub
+        //stub
         return List.of(new CakeDTO());
+    }
+
+    public void create(final CakeDTO cake) {
+        //stub
     }
 
 }

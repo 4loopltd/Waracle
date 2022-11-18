@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -28,8 +30,17 @@ public class CakeController {
 
         List<CakeDTO> cakes = cakeService.findAll();
         model.addAttribute("cakes", cakes);
+        model.addAttribute("cake", new CakeDTO());
 
         return "cakes";
+    }
+
+    @PostMapping("/cake-submit")
+    public String cakeSubmit(@ModelAttribute CakeDTO cake) {
+
+        cakeService.create(cake);
+
+        return "redirect:/cakes";
     }
 
     @ExceptionHandler
