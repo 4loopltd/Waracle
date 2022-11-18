@@ -2,10 +2,10 @@
 
 The code is organised as follows:
 1. `config` Spring configuration
-2. `controller` contains the rest controller
-3. `domain` is the domain model containing entities
-4. `model`  is the business model containing entities
-5. `repository` contains a data access object (DAO) which provides an abstract interface to the database
+2. `domain` is the domain model containing entities
+3. `model`  is the business model containing entities
+4. `repository` contains a data access object (DAO) which provides an abstract interface to the database
+5. `resource` contains the rest controller
 6. `service`  contains the services
 
 # Database

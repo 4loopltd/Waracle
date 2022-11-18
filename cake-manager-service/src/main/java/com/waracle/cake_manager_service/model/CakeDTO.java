@@ -21,4 +21,13 @@ public class CakeDTO {
     @Size(max = 255)
     private String image;
 
+    @Override
+    public String toString() {
+        return "Cake [" +
+                "title:" + title + ", " +
+                "description: " + description + ", " +
+                "image: " + image +
+                "]";
+    }
+
 }
