@@ -5,7 +5,7 @@ For the purpose of the exercise the project is faithful to the original requirem
 
 The project is organised as follows:
 1. `cake-manager-client` UI using Spring & Thymeleaf
-2. `cake-manager-service` RESTful API using Spring, H2 & Swagger
+2. `cake-manager-service` API using Spring, H2 & Swagger
 3. `docker-compose` Docker config which will build and run the application
 
 ## Getting started
@@ -25,8 +25,7 @@ http://localhost:8282/
 
 *Port numbers are configurable via the docker config.*
 
-TODO: readme
-dockerfile endpoints:
+## Endpoints
 - http://localhost:8080/actuator/health
 - http://localhost:8080
 - http://localhost:8282/actuator/health
@@ -36,11 +35,11 @@ dockerfile endpoints:
 - http://localhost:8282/swagger-ui.html
 
 ## Change log
-Application split into client & server
-Tests added
-Containerisation added
-and the rest ...
+- Application split into client & server
+- Tests added
+- Containerisation added
+- Swagger added
 
-TODO: If time...
-OAuth?
-CI?
+## TODO: If time...
+- OAuth?
+- CI?

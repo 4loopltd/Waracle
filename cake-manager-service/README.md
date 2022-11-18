@@ -41,9 +41,3 @@ curl http://localhost:8080/actuator/health
 * [Gradle user manual](https://docs.gradle.org/)  
 * [Spring Boot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)  
 * [Spring Data JPA reference](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)  
-
-
-## TODO
-Docker instructions
-
-
