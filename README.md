@@ -1,4 +1,6 @@
 # ![Waracle Cake Manager Exercise - using Java, Spring and Docker](icon.png) Cake Manager.
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/4loopltd/Waracle/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/4loopltd/Waracle/tree/master)
+
 This codebase was created for the [Waracle Cake Manager Exercise](https://github.com/Waracle/cake-manager).
 
 For the purpose of the exercise the project is faithful to the original requirements.
@@ -39,7 +41,7 @@ http://localhost:8282/
 - Tests added
 - Containerisation added
 - Swagger added
+- CircleCI added
 
 ## TODO: If time...
 - OAuth?
-- CI?
