@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
+@SuppressWarnings("SameReturnValue")
 @Controller
 public class CakeController {
 
@@ -27,19 +28,15 @@ public class CakeController {
 
     @GetMapping("/cakes")
     public String cakes(Model model) {
-
         List<CakeDTO> cakes = cakeService.findAll();
         model.addAttribute("cakes", cakes);
         model.addAttribute("cake", new CakeDTO());
-
         return "cakes";
     }
 
     @PostMapping("/cake-submit")
     public String cakeSubmit(@ModelAttribute CakeDTO cake) {
-
         cakeService.create(cake);
-
         return "redirect:/cakes";
     }
 

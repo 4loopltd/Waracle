@@ -7,16 +7,20 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.client.RestClientException;
 
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
@@ -43,9 +47,8 @@ public class CakeControllerTest {
         cake.setTitle("A cake title");
         cake.setDescription("A cake description");
         cake.setImage("a cake image");
-        List<CakeDTO> cakes = List.of(cake);
 
-        given(service.findAll()).willReturn(cakes);
+        given(service.findAll()).willReturn(List.of(cake));
 
         mvc.perform(get("/cakes"))
                 .andExpect(status().isOk())
@@ -63,9 +66,25 @@ public class CakeControllerTest {
     }
 
     @Test
+    public void given_cakes_when_postCake_then_returnViewModel() throws Exception {
+
+        CakeDTO cake = new CakeDTO();
+        cake.setTitle("A cake title");
+        cake.setDescription("A cake description");
+        cake.setImage("a cake image");
+
+        mvc.perform(post("/cake-submit").contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .flashAttr("cake", cake))
+                .andExpect(status().isFound())
+                .andExpect(view().name("redirect:/cakes"));
+
+        verify(service, times(1)).create(any(CakeDTO.class));
+    }
+
+    @Test
     public void should_returnErrorView_onException() throws Exception {
 
-        given(service.findAll()).willThrow(new RuntimeException());
+        given(service.findAll()).willThrow(new RestClientException("anythingwilldo"));
 
         mvc.perform(get("/cakes"))
                 .andExpect(status().isOk())

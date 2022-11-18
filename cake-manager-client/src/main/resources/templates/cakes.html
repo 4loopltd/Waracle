@@ -29,7 +29,7 @@
             </tbody>
         </table>
 
-        <button th:text="#{btn.create.cake}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#createCakeModal" />
+        <button th:text="#{btn.create}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#createCakeModal" />
         <div th:insert="fragments/modal :: modal" th:with="cake=${cake}"></div>
 
     </div>

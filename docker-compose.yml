@@ -6,6 +6,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    depends_on:
+      - cake-manager-service
+    environment:  
+      - API_HOST=cake-manager-service  
+      - API_PORT=8080 
   cake-manager-service:
     build:
       context: ./cake-manager-service
