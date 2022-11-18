@@ -1,0 +1,64 @@
+version: 2.1
+
+jobs:
+  build-client:
+    docker:
+      - image: cimg/openjdk:17.0.4
+
+    working_directory: ~/Waracle/cake-manager-client
+
+    environment:
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+    steps:
+      - checkout:
+          path: ~/Waracle
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-
+
+      - run: gradle dependencies
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      # run tests!
+      - run: gradle test
+
+  build-service:
+    docker:
+      - image: cimg/openjdk:17.0.4
+
+    working_directory: ~/Waracle/cake-manager-service
+
+    environment:
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+    steps:
+      - checkout:
+          path: ~/Waracle
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-
+
+      - run: gradle dependencies
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      # run tests!
+      - run: gradle test
+
+workflows:
+  build:
+    jobs:
+      - build-client 
+      - build-service 
