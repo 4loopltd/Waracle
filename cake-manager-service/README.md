@@ -3,12 +3,14 @@
 The code is organised as follows:
 1. `config` Spring configuration
 2. `controller` contains the rest controller
-3. `repo` contains a data access object (DAO) which provides an abstract interface to the database
+3. `domain` is the domain model containing entities
 4. `model`  is the business model containing entities
-5. `service`  contains the services
+5. `repository` contains a data access object (DAO) which provides an abstract interface to the database
+6. `service`  contains the services
 
 # Database
 H2 database, which can be easily changed in the `application.yml` for any other database.
+URL `jdbc:h2:mem:cake-manager-service`
 
 ## Build
 

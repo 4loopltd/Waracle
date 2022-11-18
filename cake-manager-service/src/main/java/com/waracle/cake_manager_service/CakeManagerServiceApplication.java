@@ -1,4 +1,4 @@
-package com.waracle.cakemanagerservice;
+package com.waracle.cake_manager_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
