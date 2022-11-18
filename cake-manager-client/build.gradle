@@ -8,15 +8,32 @@ group = 'com.waracle'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	annotationProcessor ('org.springframework.boot:spring-boot-configuration-processor')
+	annotationProcessor ('org.projectlombok:lombok')
+
+	implementation ('org.springframework.boot:spring-boot-starter-actuator')
+	implementation ('org.springframework.boot:spring-boot-starter-thymeleaf')
+	implementation ('org.springframework.boot:spring-boot-starter-web')
+
+	implementation('org.webjars:bootstrap:4.0.0-2')
+
+	compileOnly('org.webjars:bootstrap:5.2.2')
+	compileOnly('org.projectlombok:lombok')
+	developmentOnly('org.springframework.boot:spring-boot-devtools')
+
+	testImplementation ('org.springframework.boot:spring-boot-starter-test')
+	testImplementation ('junit:junit:4.13.2')
 }
 
 tasks.named('test') {

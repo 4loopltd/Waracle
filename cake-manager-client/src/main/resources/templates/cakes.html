@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Cakes</title>
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+
+<div>
+  <div th:insert="fragments/nav :: nav"></div>
+  <div class="container" style="padding-top: 10vh; display: flex; flex-direction: column; align-items: center;">
+    <h1 th:text="#{cakes.headline}" class="mb-4" />
+
+  </div>
+</div>
+
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

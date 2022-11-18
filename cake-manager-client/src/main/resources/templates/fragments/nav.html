@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav th:fragment="nav" class="navbar navbar-expand navbar-dark bg-primary">
+  <div class="navbar-nav w-100">
+     <a th:href="@{/}" class="navbar-brand">
+      <img th:src="@{/images/logo.png}" th:alt="#{app.title}" width="30" height="30" class="d-inline-block align-top">
+      <span th:text="#{app.title}" class="ps-1" />
+    </a>
+  </div>
+</nav>
+</body>
+</html>

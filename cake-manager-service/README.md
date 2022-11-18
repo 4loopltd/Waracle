@@ -1,5 +1,4 @@
 # CakeManagerService
-
 The code is organised as follows:
 1. `config` Spring configuration
 2. `domain` is the domain model containing entities
@@ -13,7 +12,6 @@ H2 database, which can be easily changed in the `application.yml` for any other 
 URL `jdbc:h2:mem:cake-manager-service`
 
 ## Build
-
 The application can be built using the following command:
 ```
 gradlew clean build
@@ -37,7 +35,6 @@ curl http://localhost:8080/actuator/health
 - http://localhost:8080/swagger-ui.html
 
 ## Further readings
-
 * [Gradle user manual](https://docs.gradle.org/)  
 * [Spring Boot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)  
 * [Spring Data JPA reference](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)  
