@@ -1,1 +1,13 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: cfbf0250c83e2103a6e5
+            clientSecret: 687a54f04786891d1149aa74ccf79d42886f783c
+          google:
+            clientId: 100266362843-baidr2vbp167eutpqu2gdvoluopqbilr.apps.googleusercontent.com
+            clientSecret: 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
+
 cake.url: http://${API_HOST}:${API_PORT}

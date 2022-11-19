@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Cake Manager Client</title>
+    <title>Cake Manager Login</title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
@@ -12,10 +12,13 @@
 
     <div class="container" style="padding-top: 20vh; display: flex; flex-direction: column; align-items: center;">
         <h1 th:text="#{home.headline}" class="mb-4"/>
-        <a th:text="#{btn.view}" href="/cakes" class="btn btn-success"/>
+        <a th:text="#{btn.login-github}" th:href="@{/oauth2/authorization/github}" class="btn btn-success"/>
+        <br/>
+        <a th:text="#{btn.login-google}" th:href="@{/oauth2/authorization/google}" class="btn btn-success"/>
     </div>
 </div>
 
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
 <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
 
 </body>
