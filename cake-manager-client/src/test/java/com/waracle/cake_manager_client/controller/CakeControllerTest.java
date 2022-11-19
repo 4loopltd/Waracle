@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.client.RestClientException;
@@ -19,6 +20,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -34,6 +36,7 @@ public class CakeControllerTest {
     private CakeService service;
 
     @Test
+    @WithMockUser
     public void when_getRoot_then_returnView() throws Exception {
         mvc.perform(get("/"))
                 .andExpect(status().isOk())
@@ -41,6 +44,7 @@ public class CakeControllerTest {
     }
 
     @Test
+    @WithMockUser
     public void given_cakes_when_getCakes_then_returnViewModel() throws Exception {
 
         CakeDTO cake = new CakeDTO();
@@ -66,6 +70,7 @@ public class CakeControllerTest {
     }
 
     @Test
+    @WithMockUser
     public void given_cakes_when_postCake_then_returnViewModel() throws Exception {
 
         CakeDTO cake = new CakeDTO();
@@ -73,7 +78,7 @@ public class CakeControllerTest {
         cake.setDescription("A cake description");
         cake.setImage("a cake image");
 
-        mvc.perform(post("/cake-submit").contentType(MediaType.APPLICATION_FORM_URLENCODED)
+        mvc.perform(post("/cake-submit").with(csrf()).contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .flashAttr("cake", cake))
                 .andExpect(status().isFound())
                 .andExpect(view().name("redirect:/cakes"));
@@ -82,6 +87,7 @@ public class CakeControllerTest {
     }
 
     @Test
+    @WithMockUser
     public void should_returnErrorView_onException() throws Exception {
 
         given(service.findAll()).willThrow(new RestClientException("anythingwilldo"));
@@ -91,6 +97,14 @@ public class CakeControllerTest {
                 .andExpect(view().name("error"));
 
         verify(service, times(1)).findAll();
+    }
+
+
+    @Test
+    public void should_redirect_when_unauthenticated() throws Exception {
+        mvc.perform(get("/"))
+                .andExpect(status().isFound())
+                .andExpect(redirectedUrl("http://localhost/login"));
     }
 
 }
