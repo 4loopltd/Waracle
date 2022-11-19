@@ -28,10 +28,10 @@ http://localhost:8282/
 *Port numbers are configurable via the docker config.*
 
 ## Endpoints
-UI
+
 - http://localhost:8080/actuator/health
 - http://localhost:8080
-API
+
 - http://localhost:8282/actuator/health
 - http://localhost:8282
 - http://localhost:8282/cakes
