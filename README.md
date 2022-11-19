@@ -13,6 +13,7 @@ The project is organised as follows:
 ## Getting started
 You need installed:
 - Docker
+- GitHub or Google account for authentication
 
 ## Running 
 To build and run the application
@@ -39,6 +40,7 @@ http://localhost:8282/
 - http://localhost:8282/swagger-ui.html
 
 ## Change log
+- Project upgraded to spring boot
 - Application split into client & server
 - Tests added
 - Containerisation added
