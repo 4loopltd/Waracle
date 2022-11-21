@@ -25,6 +25,21 @@ curl http://localhost:8080/actuator/health
 - http://localhost:8080
 - http://localhost:8080/actuator/health
 
+## Docker (Example)
+Create network (If not created)
+```
+docker network create cake-app
+```
+Build
+```
+docker build -t cake-client-image .
+```
+Run
+```
+docker run --name cake-manager-client --network cake-app -e API_HOST=cake-manager-service -e API_PORT=8080 -p 8080:8080 cake-client-image
+```
+*API_HOST and API_PORT as defined by the cake manager service config*
+
 ## Further readings
 * [Gradle user manual](https://docs.gradle.org/)  
 * [Spring Boot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)  
