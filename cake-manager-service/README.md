@@ -47,7 +47,6 @@ Run
 ```
 docker run --name cake-manager-service --network cake-app -p 8282:8080 cake-service-image
 ```
-*API_HOST and API_PORT as defined by the cake manager service config*
 
 ## Further readings
 * [Gradle user manual](https://docs.gradle.org/)  
