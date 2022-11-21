@@ -34,6 +34,21 @@ curl http://localhost:8080/actuator/health
 - http://localhost:8080/h2-console
 - http://localhost:8080/swagger-ui.html
 
+## Docker (Example)
+Create network (If not created)
+```
+docker network create cake-app
+```
+Build
+```
+docker build -t cake-service-image .
+```
+Run
+```
+docker run --name cake-manager-service --network cake-app -p 8282:8080 cake-service-image
+```
+*API_HOST and API_PORT as defined by the cake manager service config*
+
 ## Further readings
 * [Gradle user manual](https://docs.gradle.org/)  
 * [Spring Boot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)  
