@@ -1,21 +1,33 @@
-MIT License
+// The license agreement outlines the terms and conditions under which the software can be used.
+// It is important to read and understand the terms before using the software.
 
-Copyright (c) 2022 4loop ltd
+License Agreement
+Copyright © 2025 4loop Ltd. All Rights Reserved.
+This License Agreement ("Agreement") governs the use of the software and its associated documentation (collectively referred to as the "Software"). By using the Software, you agree to the terms and conditions outlined below.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Ownership
+The Software and all intellectual property rights therein remain the exclusive property of 4loop Ltd. This Agreement does not transfer ownership of any rights in the Software to the user.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. License Grant
+2.1. The Software is licensed, not sold.
+2.2. Subject to compliance with the terms of this Agreement, 4loop Ltd. grants you a non-exclusive, non-transferable, revocable license to install and use the Software solely for personal or internal business purposes.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+3. Restrictions
+3.1. You shall not:
+- Modify, reverse engineer, decompile, disassemble, or create derivative works of the Software.
+- Distribute, sublicense, rent, lease, or transfer the Software to any third party without prior written consent from 4loop Ltd.
+- Remove or alter any proprietary notices, labels, or branding included in the Software.
+
+4. Disclaimer of Warranties
+The Software is provided "AS IS," without any warranties of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
+
+5. Limitation of Liability
+To the maximum extent permitted by applicable law, in no event shall 4loop Ltd. be liable for any direct, indirect, incidental, special, or consequential damages arising out of or related to the use or inability to use the Software, even if 4loop Ltd. has been advised of the possibility of such damages.
+
+6. Termination
+This Agreement is effective until terminated. 4loop Ltd. reserves the right to terminate this Agreement immediately if you violate any of its terms. Upon termination, you must cease all use of the Software and destroy all copies in your possession.
+
+7. Governing Law
+This Agreement shall be governed by and construed in accordance with the laws of England and Wales, without regard to its conflict of laws provisions.
+
+End of License Agreement
